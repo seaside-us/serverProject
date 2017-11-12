@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<result>
+  <maName name="seal.ma" topic="" music="0018.mp3">
+    <rule ruleType="addToMa" addModel="oneButterFly.ma" spaceName="SP_seal_C" type="model" degree="" number="2" addModelID="addModelID1"/>
+    <rule ruleType="addToMa" addModel="M_STATUE07.ma" spaceName="SP_seal_A" type="model" degree="" number="2" addModelID="addModelID2"/>
+    <rule ruleType="addToMa" addModel="M_qipaishi_lampII.ma" spaceName="SP_seal_A" type="model" degree="" number="1" addModelID="addModelID3"/>
+    <rule ruleType="addToMa" addModel="M_qipaishi_chairII.ma" spaceName="SP_seal_A" type="model" degree="" number="1" addModelID="addModelID4"/>
+    <rule ruleType="addToMa" addModel="M_STATUE15.ma" spaceName="SP_seal_A" type="model" degree="" number="2" addModelID="addModelID5"/>
+    <rule ruleType="Deform" startFrame="0" endFrame="400" usedModelID="sealMaModel3" usedModelInMa="M_seal_seal.ma" type="sine" frequency="slow" curvature="big" wavelength="big"/>
+    <rule ruleType="Deform" startFrame="0" endFrame="400" usedModelID="addModelID3" usedModelInMa="M_qipaishi_lampII.ma" type="sine" frequency="slow" curvature="big" wavelength="big"/>
+    <rule ruleType="setColor" type="modelColor" usedModelID="addModelID1" usedModelInMa="oneButterFly.ma" color="orange" hue="31.95" saturation="0.899" value="0.737"/>
+    <rule ruleType="setColor" type="modelColor" usedModelID="sealMaModel3" usedModelInMa="M_seal_seal.ma" color="yellow" hue="50.99" saturation="0.914" value="1.0"/>
+    <rule ruleType="setColor" type="chooseLightLayout" addModel="seal_light3.ma"/>
+    <rule ruleType="setColor" type="lightColor" usedModelInMa="spotLight2" color="red" hue="0.0" saturation="0.0040" value="0.933"/>
+    <rule ruleType="setColor" type="lightColor" usedModelInMa="spotLight3" color="red" hue="0.0" saturation="0.0040" value="0.933"/>
+    <rule ruleType="setColor" type="lightColor" usedModelInMa="spotLight1" color="red" hue="0.0" saturation="0.0040" value="0.933"/>
+    <rule ruleType="setColor" type="lightColor" usedModelInMa="pointLight1" color="red" hue="0.0" saturation="0.0040" value="0.933"/>
+    <rule ruleType="setColor" type="lightColor" usedModelInMa="pointLight3" color="red" hue="0.0" saturation="0.0040" value="0.933"/>
+    <rule ruleType="setColor" type="lightColor" usedModelInMa="pointLight2" color="red" hue="0.0" saturation="0.0040" value="0.933"/>
+  </maName>
+</result>
+
+
+
+
+ 
+

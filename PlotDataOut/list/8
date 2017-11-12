@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<result>
+  <maName name="kindergarten.ma" topic="" music="0050.mp3">
+    <rule ruleType="addToMa" addModel="boy.ma" spaceName="SP_kindergarten_A" type="people" degree="" number="1" addModelID="addModelID1"/>
+    <rule ruleType="addToMa" addModel="oneButterFly.ma" spaceName="SP_kindergarten_B" type="model" degree="" number="2" addModelID="addModelID2"/>
+    <rule ruleType="addToMa" addModel="M_SmallHelicopter.ma" spaceName="SP_kindergarten_B" type="model" degree="" number="2" addModelID="addModelID3"/>
+    <rule ruleType="addToMa" addModel="M_SmallJet.ma" spaceName="SP_kindergarten_B" type="model" degree="" number="2" addModelID="addModelID4"/>
+    <rule ruleType="addToMa" addModel="oneButterFly.ma" spaceName="SP_kindergarten_C" type="model" degree="" number="1" addModelID="addModelID5"/>
+    <rule ruleType="Camera" name1="addModelID1"/>
+    <rule ruleType="addActionToMa" type="action" usedModelID="addModelID1" usedModelInMa="boy.ma" actionName="guitar"/>
+    <rule ruleType="Deform" startFrame="0" endFrame="500" usedModelID="kindergartenMaModel1" usedModelInMa="M_kindergarten_house1.ma" type="wave" frequency="normal" curvature="small" wavelength="big"/>
+    <rule ruleType="setColor" type="modelTexture" usedModelID="addModelID1" usedModelInMa="boy.ma" textureType="trousers" texturePath="boy_trousers_02.jpg"/>
+    <rule ruleType="setColor" type="modelTexture" usedModelID="addModelID1" usedModelInMa="boy.ma" textureType="shirt" texturePath="boy_shirt_05.jpg"/>
+    <rule ruleType="setColor" type="modelColor" usedModelID="addModelID3" usedModelInMa="M_SmallHelicopter.ma" color="orange" hue="27.54" saturation="0.308" value="0.776"/>
+    <rule ruleType="setColor" type="modelColor" usedModelID="kindergartenMaModel2" usedModelInMa="M_kindergarten_sliperyslide.ma" color="orange" hue="34.44" saturation="0.22" value="0.965"/>
+    <rule ruleType="setColor" type="modelColor" usedModelID="kindergartenMaModel5" usedModelInMa="M_kindergarten_swing.ma" color="orange" hue="20.55" saturation="0.296" value="0.969"/>
+    <rule ruleType="setColor" type="modelColor" usedModelID="kindergartenMaModel3" usedModelInMa="M_kindergarten_seesaw.ma" color="orange" hue="36.0" saturation="0.617" value="0.922"/>
+  </maName>
+</result>
+
+
+
+
+ 
+

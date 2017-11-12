@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<result>
+  <maName name="restaurantTable.ma" topic="EatingActionTopic" music="0040.mp3">
+    <rule ruleType="addToMa" addModel="girl.ma" spaceName="SP_restaurantTable_A" type="people" degree="" number="1" addModelID="addModelID1"/>
+    <rule ruleType="addToMa" addModel="girl.ma" spaceName="SP_restaurantTable_B" type="people" degree="" number="1" addModelID="addModelID2"/>
+    <rule ruleType="addToMa" addModel="oneButterFly.ma" spaceName="SP_restaurantTable_C" type="model" degree="" number="2" addModelID="addModelID3"/>
+    <rule ruleType="addToMa" addModel="M_pen.ma" spaceName="SP_restaurantTable_B" type="model" degree="" number="1" addModelID="addModelID4"/>
+    <rule ruleType="addToMa" addModel="M_grape.ma" spaceName="SP_restaurantTable_B" type="model" degree="" number="1" addModelID="addModelID5"/>
+    <rule ruleType="addToMa" addModel="M_qipaishi_screen.ma" spaceName="SP_restaurantTable_A" type="model" degree="" number="2" addModelID="addModelID6"/>
+    <rule ruleType="Camera" name1="addModelID1" name2="addModelID2"/>
+    <rule ruleType="addToMa" addModel="no.ma" spaceName="" type="noModel" degree="" number="1" addModelID=""/>
+    <rule ruleType="addActionToMa" type="action" usedModelID="addModelID2" usedModelInMa="girl.ma" actionName="walkcane"/>
+    <rule ruleType="addActionToMa" type="action" usedModelID="addModelID1" usedModelInMa="girl.ma" actionName="walkcane"/>
+    <rule ruleType="Deform" startFrame="0" endFrame="200" usedModelID="restaurantTableMaModel2" usedModelInMa="M_restaurantFruit_fruit.ma" type="bend" frequency="normal" curvature="middle" bend_methods="top"/>
+    <rule ruleType="setColor" type="modelTexture" usedModelID="addModelID2" usedModelInMa="girl.ma" textureType="head" texturePath="girl_head_03.jpg"/>
+    <rule ruleType="setColor" type="modelTexture" usedModelID="addModelID2" usedModelInMa="girl.ma" textureType="hair" texturePath="girl_hair_01.jpg"/>
+    <rule ruleType="setColor" type="modelTexture" usedModelID="addModelID2" usedModelInMa="girl.ma" textureType="blouse" texturePath="girl_blouse_03.jpg"/>
+    <rule ruleType="setColor" type="modelTexture" usedModelID="addModelID1" usedModelInMa="girl.ma" textureType="body" texturePath="girl_body_01.jpg"/>
+    <rule ruleType="setColor" type="modelTexture" usedModelID="addModelID1" usedModelInMa="girl.ma" textureType="head" texturePath="girl_head_01.jpg"/>
+    <rule ruleType="setColor" type="modelTexture" usedModelID="addModelID1" usedModelInMa="girl.ma" textureType="blouse" texturePath="girl_blouse_01.jpg"/>
+    <rule ruleType="setColor" type="modelColor" usedModelID="addModelID3" usedModelInMa="oneButterFly.ma" color="green" hue="149.17" saturation="0.362" value="0.78"/>
+    <rule ruleType="setColor" type="modelColor" usedModelID="addModelID5" usedModelInMa="M_grape.ma" color="yellow" hue="63.1" saturation="0.234" value="0.973"/>
+  </maName>
+</result>
+
+
+
+
+ 
+

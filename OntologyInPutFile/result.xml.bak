@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<result negType="" negCont=""><message value="谢谢你的帮组，我好开心"/><nemessage value=" 谢谢你的帮组，我好开心"/><segmessage value="谢谢#vb 你#pn 的#ax 帮#vb 组#nn ，#wp 我#pn 好#aj 开心#aj"/><topic name="谢意" key="谢谢"><root name="动作" flag="" value="形容动作:求助:帮" color="" negFlag="0" negCont="" neg=""/><root name="人物" flag="" value="单数人物:第二人称单数:你" color="" negFlag="0" negCont="" neg=""/></topic><topic name="喜悦" key="开心"><root name="人物" flag="" value="单数人物:第一人称单数:我" color="" negFlag="0" negCont="" neg=""/><root name="情绪" flag="" value="喜悦:开心" color="" negFlag="0" negCont="" neg=""/></topic><topic name="谢意" flag="1" probability="0.91336"/><textType attribute="subjective"><happy attribute="0.2938882180058355"/></textType></result>
+
+
+
+
+ 
+

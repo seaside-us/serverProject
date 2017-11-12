@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<result>
+  <maName name="classOver.ma" topic="" music="0039.mp3">
+    <rule ruleType="addToMa" addModel="oneButterFly.ma" spaceName="SP_classOver_D" type="model" degree="" number="2" addModelID="addModelID1"/>
+    <rule ruleType="addToMa" addModel="M_SmallJet.ma" spaceName="SP_classOver_C" type="model" degree="" number="1" addModelID="addModelID2"/>
+    <rule ruleType="addToMa" addModel="M_truck04.ma" spaceName="SP_classOver_B" type="model" degree="" number="1" addModelID="addModelID3"/>
+    <rule ruleType="addToMa" addModel="M_truck02.ma" spaceName="SP_classOver_B" type="model" degree="" number="1" addModelID="addModelID4"/>
+    <rule ruleType="addToMa" addModel="M_swingmachine.ma" spaceName="SP_classOver_B" type="model" degree="" number="1" addModelID="addModelID5"/>
+    <rule ruleType="addToMa" addModel="M_truck01.ma" spaceName="SP_classOver_B" type="model" degree="" number="1" addModelID="addModelID6"/>
+    <rule ruleType="addToMa" addModel="M_car11.ma" spaceName="SP_classOver_B" type="model" degree="" number="1" addModelID="addModelID7"/>
+    <rule ruleType="addToMa" addModel="M_oakautumn.ma" spaceName="SP_classOver_A" type="model" degree="" number="2" addModelID="addModelID8"/>
+    <rule ruleType="Deform" startFrame="0" endFrame="200" usedModelID="addModelID2" usedModelInMa="M_SmallJet.ma" type="twist" frequency="fast" curvature="big"/>
+    <rule ruleType="setColor" type="modelColor" usedModelID="addModelID8" usedModelInMa="M_oakautumn.ma" color="green" hue="133.9" saturation="0.466" value="0.69"/>
+    <rule ruleType="setColor" type="modelColor" usedModelID="classOverMaModel3" usedModelInMa="M_kindergarten_house1.ma" color="pink" hue="341.64" saturation="0.775" value="0.678"/>
+    <rule ruleType="setColor" type="modelColor" usedModelID="addModelID7" usedModelInMa="M_car11.ma" color="yellow" hue="55.1" saturation="0.821" value="0.702"/>
+    <rule ruleType="setColor" type="modelColor" usedModelID="addModelID1" usedModelInMa="oneButterFly.ma" color="black" hue="0.0" saturation="0.0" value="0.0"/>
+    <rule ruleType="setColor" type="modelColor" usedModelID="addModelID2" usedModelInMa="M_SmallJet.ma" color="orange" hue="45.0" saturation="0.018" value="0.851"/>
+    <rule ruleType="setColor" type="modelColor" usedModelID="classOverMaModel5" usedModelInMa="M_car_tree.ma" color="orange" hue="31.95" saturation="0.899" value="0.737"/>
+  </maName>
+</result>
+
+
+
+
+ 
+

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="GB2312"?>
+
+<result>
+  <maName name="room2.ma" topic="DreadTopic" music="0037.mp3" maFrame="225">
+    <rule ruleType="addToMa" addModel="M_pen.ma" class="OfficeStationery" spaceName="SP_room2_D" type="model" isTarget="1" degree="" number="4" addModelID="addModelID1"/>
+    <rule ruleType="addToMa" addModel="M_openbook.ma" class="OfficeStationery" spaceName="SP_room2_D" type="model" isTarget="1" degree="" number="2" addModelID="addModelID2"/>
+    <rule ruleType="addToMa" addModel="M_magnifier.ma" class="OfficeStationery" spaceName="SP_room2_D" type="model" isTarget="1" degree="" number="1" addModelID="addModelID3"/>
+    <rule ruleType="addToMa" addModel="M_gutterball_Bowling.ma" class="Bowling" spaceName="SP_room2_C" type="model" isTarget="0" degree="" number="1" addModelID="addModelID4"/>
+    <rule ruleType="addToMa" addModel="M_qipaishi_screen.ma" class="Chess" spaceName="SP_room2_B" type="model" isTarget="0" degree="" number="1" addModelID="addModelID5"/>
+    <rule ruleType="addToMa" addModel="M_magnifier.ma" class="OfficeStationery" spaceName="SP_room2_D" type="model" isTarget="0" degree="" number="1" addModelID="addModelID6"/>
+    <rule ruleType="addToMa" addModel="M_girl.ma" class="YoungGirl" spaceName="SP_room2_C" type="people" isTarget="1" degree="" number="1" addModelID="addModelID7"/>
+    <rule ruleType="addActionToMa" type="action" eventType="ShootEvent" usedModelID="addModelID7" usedModelInMa="M_girl.ma" actionName="shootingarrow79_86" distance="Default" reference="" ifAddConstraint="true"/>
+    <rule ruleType="addActionToMa" type="action" eventType="Static_ScaredEvent" usedModelID="addModelID7" usedModelInMa="M_girl.ma" actionName="scared79_73" distance="Default" reference="" ifAddConstraint="false"/>
+    <rule ruleType="Deform" startFrame="0" endFrame="200" usedModelID="addModelID4" usedModelInMa="M_gutterball_Bowling.ma" type="squash" frequency="normal" curvature="big"/>
+    <rule ruleType="Deform" startFrame="0" endFrame="200" usedModelID="addModelID6" usedModelInMa="M_magnifier.ma" type="bend" frequency="slow" curvature="big" bend_methods="top"/>
+    <rule ruleType="addLightToMa" autoGeneration="no" type="ambientLight" haveShade="no" targetMode="M_pen.ma" haveEffect="no" relativeLocation="roomIn" lightColor="white" intensity="normal" isDynamic="no" changeFrame="" changeColor="" changeIntensity="" moveDirection=""/>
+    <rule ruleType="addLightToMa" autoGeneration="no" type="volumeLight" haveShade="yes" targetMode="M_pen.ma" haveEffect="no" relativeLocation="roomIn" lightColor="white" intensity="normal" isDynamic="no" changeFrame="" changeColor="" changeIntensity="" moveDirection=""/>
+    <rule ruleType="setLayout" spaceName="SP_room2_D" layoutEffect="ComparedLayout" area1_name="addModelID1 addModelID2 addModelID3 addModelID6" area1_shape="othertype"/>
+    <rule ruleType="setLayout" spaceName="SP_room2_C" layoutEffect="RhythmLayout" area1_name="addModelID7" area1_shape="point" area2_name="addModelID4" area2_shape="point"/>
+    <rule ruleType="setLayout" spaceName="SP_room2_B" layoutEffect="RhythmLayout" area1_name="addModelID5" area1_shape="point"/>
+    <rule ruleType="SetCamera" CameraName="newCameraA" Range="all" isStart="1" depthOfField="transform" shotPlan="Fix" usedModelID="addModelID1 addModelID2 addModelID3 " target="addModelID1 addModelID2 addModelID3 " startPitch="lookdown" endPitch="lookdown" startYaw="offside" endYaw="offside" startShotType="medium" endShotType="medium" startframe="2" endframe="57" startinall="2" endinall="57"/>
+    <rule ruleType="SetCamera" CameraName="newCameraB" Range="all" isStart="1" depthOfField="transform" shotPlan="Rotate" usedModelID="addModelID3 addModelID2 addModelID1 " target="addModelID3 addModelID2 addModelID1 " startPitch="lookdown" endPitch="lookdown" startYaw="offside" endYaw="backside" startShotType="medium" endShotType="closeup" startframe="58" endframe="85" startinall="58" endinall="85"/>
+    <rule ruleType="SetCamera" CameraName="newCameraC" Range="all" isStart="1" depthOfField="false" shotPlan="Push" usedModelID="addModelID2 addModelID3 addModelID1 " target="addModelID2 addModelID3 addModelID1 " startPitch="lookdown" endPitch="lookdown" startYaw="offside" endYaw="offside" startShotType="medium" endShotType="closeup" startframe="86" endframe="113" startinall="86" endinall="113"/>
+    <rule ruleType="SetCamera" CameraName="newCameraA" Range="all" isStart="1" depthOfField="transform" shotPlan="Fix" usedModelID="addModelID1 addModelID2 addModelID3 " target="addModelID1 addModelID2 addModelID3 " startPitch="lookdown" endPitch="lookdown" startYaw="nearside" endYaw="nearside" startShotType="closeup" endShotType="closeup" startframe="115" endframe="170" startinall="115" endinall="170"/>
+    <rule ruleType="SetCamera" CameraName="newCameraB" Range="all" isStart="1" depthOfField="transform" shotPlan="Rotate" usedModelID="addModelID3 addModelID2 addModelID1 " target="addModelID3 addModelID2 addModelID1 " startPitch="lookdown" endPitch="lookdown" startYaw="nearside" endYaw="forward" startShotType="closeup" endShotType="closeup" startframe="171" endframe="198" startinall="171" endinall="198"/>
+    <rule ruleType="SetCamera" CameraName="newCameraC" Range="all" isStart="1" depthOfField="false" shotPlan="Push" usedModelID="addModelID2 addModelID3 addModelID1 " target="addModelID2 addModelID3 addModelID1 " startPitch="lookdown" endPitch="lookdown" startYaw="nearside" endYaw="nearside" startShotType="closeup" endShotType="closeup" startframe="199" endframe="226" startinall="199" endinall="226"/>
+  </maName>
+</result>

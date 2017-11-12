@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<result>
+  <maName name="questionMark.ma" topic="QuestionTopic" music="0050.mp3">
+    <rule ruleType="addToMa" addModel="girl.ma" spaceName="SP_questionMark_A" type="people" degree="" number="1" addModelID="addModelID1"/>
+    <rule ruleType="addToMa" addModel="boy.ma" spaceName="SP_questionMark_A" type="people" degree="" number="1" addModelID="addModelID2"/>
+    <rule ruleType="deleteFromMa" type="model" usedModelID="questionMarkMaModel1"/>
+    <rule ruleType="deleteFromMa" type="model" usedModelID="questionMarkMaModel2"/>
+    <rule ruleType="Camera" name1="addModelID1" name2="addModelID2"/>
+    <rule ruleType="changeBackgroundPicture" pictureType="1" changeName="5" pictureName="bg_0014.jpg"/>
+    <rule ruleType="addActionToMa" type="action" usedModelID="addModelID2" usedModelInMa="boy.ma" actionName="walkcane"/>
+    <rule ruleType="addActionToMa" type="action" usedModelID="addModelID1" usedModelInMa="girl.ma" actionName="walkcane"/>
+    <rule ruleType="setColor" type="modelTexture" usedModelID="addModelID2" usedModelInMa="boy.ma" textureType="shirt" texturePath="boy_shirt_08.jpg"/>
+    <rule ruleType="setColor" type="modelTexture" usedModelID="addModelID1" usedModelInMa="girl.ma" textureType="trousers" texturePath="girl_trousers_01.jpg"/>
+    <rule ruleType="setColor" type="modelTexture" usedModelID="addModelID1" usedModelInMa="girl.ma" textureType="hair" texturePath="girl_hair_01.jpg"/>
+    <rule ruleType="setColor" type="modelTexture" usedModelID="addModelID1" usedModelInMa="girl.ma" textureType="head" texturePath="girl_head_01.jpg"/>
+  </maName>
+</result>
+
+
+
+
+ 
+

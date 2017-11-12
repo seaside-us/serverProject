@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<result>
+  <maName name="clock.ma" topic="" music="0039.mp3">
+    <rule ruleType="addToMa" addModel="oneButterFly.ma" spaceName="SP_clock_C" type="model" degree="" number="1" addModelID="addModelID1"/>
+    <rule ruleType="addToMa" addModel="M_phone.ma" spaceName="SP_clock_A" type="model" degree="" number="1" addModelID="addModelID2"/>
+    <rule ruleType="addToMa" addModel="M_restaurantFruit_pear.ma" spaceName="SP_clock_A" type="model" degree="" number="1" addModelID="addModelID3"/>
+    <rule ruleType="Deform" startFrame="0" endFrame="200" usedModelID="clockMaModel2" usedModelInMa="M_clock.ma" type="wave" frequency="slow" curvature="middle" wavelength="middle"/>
+    <rule ruleType="setColor" type="modelColor" usedModelID="clockMaModel2" usedModelInMa="M_clock.ma" color="yellow" hue="55.1" saturation="0.821" value="0.702"/>
+  </maName>
+</result>
+
+
+
+
+ 
+

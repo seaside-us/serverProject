@@ -1,0 +1,9 @@
+2017.09.04 20:54:46.591 GMT+08:00 INFO: *** SYSTEM START ***
+2017.09.04 20:54:46.978 GMT+08:00 WARNING: [Local Folder Repository] The specified file must be a directory. (F:\eclipse_64\workspace\serverProject\plugins\edu.stanford.smi.protegex.owl) -- LocalFolderRepository.update()
+2017.09.04 20:54:47.130 GMT+08:00 INFO: Loading triples for: file:/C:/ontologyOWL/sumoOWL2/sumo_phone3.owl -- ProtegeOWLParser.loadTriples()
+2017.09.04 20:54:47.526 GMT+08:00 INFO:     Loaded 10000 triples 311 -- ProtegeOWLParser$ProtegeOWLStatementHandler.printTriplesLoadLogMessage()
+2017.09.04 20:54:47.746 GMT+08:00 INFO:     Loaded 20000 triples 275 -- ProtegeOWLParser$ProtegeOWLStatementHandler.printTriplesLoadLogMessage()
+2017.09.04 20:54:47.888 GMT+08:00 INFO:     Loaded 30000 triples 311 -- ProtegeOWLParser$ProtegeOWLStatementHandler.printTriplesLoadLogMessage()
+2017.09.04 20:54:47.984 GMT+08:00 INFO:     Completed triple loading after 853 ms -- ProtegeOWLParser.loadTriples()
+2017.09.04 20:54:47.985 GMT+08:00 INFO: Importing http://www.owl-ontologies.com/Ontology1291624979.owl from location: C:\ontologyOWL\AllOwlFile\zhaoOWL\ColorAndLight.owl -- AbstractOWLModel.loadImportedAssertions()
+2017.09.04 20:54:47.991 GMT+08:00 INFO: Loading triples for: http://www.owl-ontologies.com/Ontology1291624979.owl -- ProtegeOWLParser.loadTriples()

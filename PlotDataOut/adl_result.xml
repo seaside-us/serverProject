@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="GB2312"?>
+
+<result>
+  <maName name="schoolroomIn.ma" topic="DreadTopic" music="fr06.mp3">
+    <rule ruleType="addToMa" addModel="M_pen.ma" class="OfficeStationery" spaceName="SP_schoolroomInC" type="model" isTarget="1" degree="" number="3" addModelID="addModelID1"/>
+    <rule ruleType="addToMa" addModel="M_book.ma" class="OfficeStationery" spaceName="SP_schoolroomInC" type="model" isTarget="1" degree="" number="1" addModelID="addModelID2"/>
+    <rule ruleType="addToMa" addModel="M_pen.ma" class="OfficeStationery" spaceName="SP_schoolroomInB" type="model" isTarget="1" degree="" number="3" addModelID="addModelID3"/>
+    <rule ruleType="addToMa" addModel="M_book.ma" class="OfficeStationery" spaceName="SP_schoolroomInB" type="model" isTarget="1" degree="" number="1" addModelID="addModelID4"/>
+    <rule ruleType="Deform" startFrame="0" endFrame="300" usedModelID="addModelID3" usedModelInMa="M_pen.ma" type="twist" frequency="fast" curvature="big"/>
+    <rule ruleType="addLightToMa" autoGeneration="yes" type="volumeLight" haveShade="yes" targetMode="M_pen.ma" haveEffect="no" relativeLocation="roomIn" lightColor="white" intensity="normal" isDynamic="no" changeFrame="" changeColor="" changeIntensity="" moveDirection=""/>
+    <rule ruleType="addLightToMa" autoGeneration="yes" type="ambientLight" haveShade="no" targetMode="M_pen.ma" haveEffect="no" relativeLocation="roomOut" lightColor="white" intensity="normal" isDynamic="no" changeFrame="" changeColor="" changeIntensity="" moveDirection=""/>
+    <rule ruleType="addLightToMa" autoGeneration="yes" type="pointLight" haveShade="yes" targetMode="M_pen.ma" haveEffect="yes" relativeLocation="roomOut" lightColor="white" intensity="normal" isDynamic="no" changeFrame="" changeColor="" changeIntensity="" moveDirection=""/>
+    <rule ruleType="setLayout" spaceName="SP_schoolroomInC" layoutEffect="ComparedLayout" area1_name="addModelID1 addModelID2" area1_shape="othertype"/>
+    <rule ruleType="setLayout" spaceName="SP_schoolroomInB" layoutEffect="RhythmLayout" area1_name="addModelID3 addModelID4" area1_shape="othertype"/>
+    <rule ruleType="SetCamera" CameraName="newCameraA" Range="all" isStart="1" depthOfField="focus" HLCP="Back" shotPlan="Fix" usedModelID="addModelID1 addModelID2 addModelID3 addModelID4" target="M_pen.ma M_book.ma M_pen.ma M_book.ma" startPitch="forehead" endPitch="forehead" startYaw="forward" endYaw="forward" startShotType="establish" endShotType="establish" startframe="1" endframe="350" startinall="1" endinall="350"/>
+  </maName>
+</result>

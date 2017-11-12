@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<result>
+  <maName name="cry_mm.ma" topic="CryTopic" music="0011.mp3">
+    <rule ruleType="addToMa" addModel="M_Small_Tree08.ma" spaceName="SP_cry_mm_A" type="model" degree="" number="1" addModelID="addModelID1"/>
+    <rule ruleType="addToMa" addModel="M_Crabgr.ma" spaceName="SP_cry_mm_A" type="model" degree="" number="1" addModelID="addModelID2"/>
+    <rule ruleType="addToMa" addModel="M_poplartree.ma" spaceName="SP_cry_mm_A" type="model" degree="" number="1" addModelID="addModelID3"/>
+    <rule ruleType="addToMa" addModel="M_cherrytree1.ma" spaceName="SP_cry_mm_A" type="model" degree="" number="1" addModelID="addModelID4"/>
+    <rule ruleType="addToMa" addModel="M_agree_flower_flower.ma" spaceName="SP_cry_mm_A" type="model" degree="" number="1" addModelID="addModelID5"/>
+    <rule ruleType="addToMa" addModel="oneButterFly.ma" spaceName="SP_cry_mm_B" type="model" degree="" number="2" addModelID="addModelID6"/>
+    <rule ruleType="addToMa" addModel="M_SmallHelicopter.ma" spaceName="SP_cry_mm_B" type="model" degree="" number="2" addModelID="addModelID7"/>
+    <rule ruleType="addToMa" addModel="oneButterFly.ma" spaceName="SP_cry_mm_C" type="model" degree="" number="1" addModelID="addModelID8"/>
+    <rule ruleType="changeBackgroundPicture" pictureType="2" changeName="1" pictureName="bg_0041.jpg"/>
+    <rule ruleType="Deform" startFrame="0" endFrame="100" usedModelID="cry_mmMaModel2" usedModelInMa="M_cry_mm_mm.ma" type="twist" frequency="fast" curvature="big"/>
+    <rule ruleType="Deform" startFrame="0" endFrame="100" usedModelID="addModelID7" usedModelInMa="M_SmallHelicopter.ma" type="twist" frequency="fast" curvature="big"/>
+    <rule ruleType="setColor" type="modelColor" usedModelID="addModelID6" usedModelInMa="oneButterFly.ma" color="grey" hue="0.0" saturation="0.0" value="0.8"/>
+    <rule ruleType="setColor" type="modelColor" usedModelID="addModelID2" usedModelInMa="M_Crabgr.ma" color="grey" hue="0.0" saturation="0.0" value="0.6"/>
+    <rule ruleType="setColor" type="modelColor" usedModelID="addModelID7" usedModelInMa="M_SmallHelicopter.ma" color="blue" hue="233.75" saturation="0.604" value="0.624"/>
+    <rule ruleType="setColor" type="modelColor" usedModelID="addModelID3" usedModelInMa="M_poplartree.ma" color="blue" hue="235.56" saturation="0.628" value="0.337"/>
+  </maName>
+</result>
+
+
+
+
+ 
+

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<result>
+  <maName name="cry_mm.ma" topic="CryTopic" music="0045.mp3">
+    <rule ruleType="addToMa" addModel="oneButterFly.ma" spaceName="SP_cry_mm_C" type="model" degree="" number="1" addModelID="addModelID1"/>
+    <rule ruleType="addToMa" addModel="M_SmallJet.ma" spaceName="SP_cry_mm_B" type="model" degree="" number="1" addModelID="addModelID2"/>
+    <rule ruleType="addToMa" addModel="M_SmallHelicopter.ma" spaceName="SP_cry_mm_B" type="model" degree="" number="1" addModelID="addModelID3"/>
+    <rule ruleType="addToMa" addModel="M_riceplant.ma" spaceName="SP_cry_mm_A" type="model" degree="" number="5" addModelID="addModelID4"/>
+    <rule ruleType="addToMa" addModel="M_Small_Tree01.ma" spaceName="SP_cry_mm_A" type="model" degree="" number="1" addModelID="addModelID5"/>
+    <rule ruleType="addToMa" addModel="M_cornplant.ma" spaceName="SP_cry_mm_A" type="model" degree="" number="1" addModelID="addModelID6"/>
+    <rule ruleType="addToMa" addModel="M_Tree02.ma" spaceName="SP_cry_mm_A" type="model" degree="" number="3" addModelID="addModelID7"/>
+    <rule ruleType="addToMa" addModel="M_Cattl02.ma" spaceName="SP_cry_mm_A" type="model" degree="" number="1" addModelID="addModelID8"/>
+    <rule ruleType="Deform" startFrame="0" endFrame="100" usedModelID="cry_mmMaModel1" usedModelInMa="M_cry_mm_tree.ma" type="flare" frequency="fast" curvature="big" flare_methods="swell"/>
+    <rule ruleType="Deform" startFrame="0" endFrame="100" usedModelID="cry_mmMaModel1" usedModelInMa="M_cry_mm_tree.ma" type="sine" frequency="fast" curvature="big" wavelength="big"/>
+    <rule ruleType="setColor" type="modelColor" usedModelID="cry_mmMaModel2" usedModelInMa="M_cry_mm_mm.ma" color="magenta" hue="304.0" saturation="0.492" value="0.478"/>
+    <rule ruleType="setColor" type="modelColor" usedModelID="addModelID5" usedModelInMa="M_Small_Tree01.ma" color="orange" hue="20.0" saturation="0.453" value="0.208"/>
+    <rule ruleType="setColor" type="modelColor" usedModelID="addModelID3" usedModelInMa="M_SmallHelicopter.ma" color="green" hue="160.0" saturation="0.652" value="0.18"/>
+    <rule ruleType="setColor" type="modelColor" usedModelID="addModelID8" usedModelInMa="M_Cattl02.ma" color="grey" hue="0.0" saturation="0.0" value="0.6"/>
+  </maName>
+</result>
+
+
+
+
+ 
+

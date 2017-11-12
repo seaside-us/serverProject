@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<result>
+  <maName name="pingpong.ma" topic="PingPongActionTopic" music="0031.mp3">
+    <rule ruleType="addToMa" addModel="oneButterFly.ma" spaceName="SP_pingpong_C" type="model" degree="" number="1" addModelID="addModelID1"/>
+    <rule ruleType="addToMa" addModel="M_SmallJet.ma" spaceName="SP_pingpong_B" type="model" degree="" number="1" addModelID="addModelID2"/>
+    <rule ruleType="addToMa" addModel="M_basketball_basketball.ma" spaceName="SP_pingpong_A" type="model" degree="" number="1" addModelID="addModelID3"/>
+    <rule ruleType="deleteFromMa" type="model" usedModelID="pingpongMaModel1"/>
+    <rule ruleType="Deform" startFrame="0" endFrame="200" usedModelID="pingpongMaModel3" usedModelInMa="M_pingpong_table.ma" type="sine" frequency="fast" curvature="middle" wavelength="middle"/>
+    <rule ruleType="Deform" startFrame="0" endFrame="200" usedModelID="addModelID3" usedModelInMa="M_basketball_basketball.ma" type="sine" frequency="fast" curvature="middle" wavelength="middle"/>
+    <rule ruleType="Deform" startFrame="0" endFrame="200" usedModelID="pingpongMaModel2" usedModelInMa="M_pingpong_pingpong.ma" type="squash" frequency="normal" curvature="big"/>
+    <rule ruleType="Deform" startFrame="0" endFrame="200" usedModelID="addModelID3" usedModelInMa="M_basketball_basketball.ma" type="squash" frequency="normal" curvature="big"/>
+    <rule ruleType="setColor" type="modelColor" usedModelID="addModelID2" usedModelInMa="M_SmallJet.ma" color="orange" hue="33.85" saturation="0.436" value="0.702"/>
+    <rule ruleType="setColor" type="modelColor" usedModelID="addModelID3" usedModelInMa="M_basketball_basketball.ma" color="yellow" hue="57.86" saturation="0.298" value="0.737"/>
+  </maName>
+</result>
+
+
+
+
+ 
+

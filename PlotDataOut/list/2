@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<result>
+  <maName name="riverFallingTree.ma" topic="ChangeWeatherActionTopic" music="0050.mp3">
+    <rule ruleType="addToMa" addModel="oneButterFly.ma" spaceName="SP_riverFallingTree_C" type="model" degree="" number="1" addModelID="addModelID1"/>
+    <rule ruleType="addToMa" addModel="M_SmallJet.ma" spaceName="SP_riverFallingTree_B" type="model" degree="" number="1" addModelID="addModelID2"/>
+    <rule ruleType="addToMa" addModel="M_SmallHelicopter.ma" spaceName="SP_riverFallingTree_B" type="model" degree="" number="1" addModelID="addModelID3"/>
+    <rule ruleType="addToMa" addModel="M_bamboo.ma" spaceName="SP_riverFallingTree_A" type="model" degree="" number="1" addModelID="addModelID4"/>
+    <rule ruleType="Deform" startFrame="0" endFrame="500" usedModelID="riverFallingTreeMaModel2" usedModelInMa="M_riverFallingTree_tree.ma" type="sine" frequency="fast" curvature="middle" wavelength="middle"/>
+    <rule ruleType="Deform" startFrame="0" endFrame="500" usedModelID="addModelID1" usedModelInMa="oneButterFly.ma" type="sine" frequency="fast" curvature="middle" wavelength="middle"/>
+    <rule ruleType="Deform" startFrame="0" endFrame="500" usedModelID="addModelID2" usedModelInMa="M_SmallJet.ma" type="squash" frequency="normal" curvature="big"/>
+    <rule ruleType="setColor" type="modelColor" usedModelID="addModelID3" usedModelInMa="M_SmallHelicopter.ma" color="black" hue="0.0" saturation="0.0" value="0.0"/>
+    <rule ruleType="setColor" type="modelColor" usedModelID="addModelID1" usedModelInMa="oneButterFly.ma" color="grey" hue="0.0" saturation="0.0" value="0.4"/>
+    <rule ruleType="setColor" type="modelColor" usedModelID="addModelID2" usedModelInMa="M_SmallJet.ma" color="purple" hue="279.23" saturation="0.732" value="0.557"/>
+  </maName>
+</result>
+
+
+
+
+ 
+

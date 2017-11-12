@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<result>
+  <maName name="fallingStar.ma" topic="" music="0018.mp3">
+    <rule ruleType="addToMa" addModel="girl.ma" spaceName="SP_fallingStar_A" type="people" degree="" number="1" addModelID="addModelID1"/>
+    <rule ruleType="addToMa" addModel="boy.ma" spaceName="SP_fallingStar_A" type="people" degree="" number="1" addModelID="addModelID2"/>
+    <rule ruleType="addToMa" addModel="oneButterFly.ma" spaceName="SP_fallingStar_B" type="model" degree="" number="3" addModelID="addModelID3"/>
+    <rule ruleType="addToMa" addModel="M_Tree05.ma" spaceName="SP_fallingStar_A" type="model" degree="" number="1" addModelID="addModelID4"/>
+    <rule ruleType="addToMa" addModel="M_Leave_Tree21.ma" spaceName="SP_fallingStar_A" type="model" degree="" number="1" addModelID="addModelID5"/>
+    <rule ruleType="Camera" name1="addModelID1" name2="addModelID2"/>
+    <rule ruleType="addToMa" addModel="no.ma" spaceName="" type="noModel" degree="" number="1" addModelID=""/>
+    <rule ruleType="changeBackgroundPicture" pictureType="2" changeName="1" pictureName="bg_0034.jpg"/>
+    <rule ruleType="addActionToMa" type="action" usedModelID="addModelID2" usedModelInMa="boy.ma" actionName="handstand"/>
+    <rule ruleType="addActionToMa" type="action" usedModelID="addModelID1" usedModelInMa="girl.ma" actionName="guitar"/>
+    <rule ruleType="Deform" startFrame="0" endFrame="200" usedModelID="addModelID3" usedModelInMa="oneButterFly.ma" type="flare" frequency="fast" curvature="big" flare_methods="swell"/>
+    <rule ruleType="setColor" type="modelTexture" usedModelID="addModelID2" usedModelInMa="boy.ma" textureType="shirt" texturePath="boy_shirt_02.jpg"/>
+    <rule ruleType="setColor" type="modelTexture" usedModelID="addModelID2" usedModelInMa="boy.ma" textureType="shoes" texturePath="boy_shoes_01.jpg"/>
+    <rule ruleType="setColor" type="modelTexture" usedModelID="addModelID1" usedModelInMa="girl.ma" textureType="shoes" texturePath="girl_shoes_01.jpg"/>
+    <rule ruleType="setColor" type="modelTexture" usedModelID="addModelID1" usedModelInMa="girl.ma" textureType="head" texturePath="girl_head_02.jpg"/>
+    <rule ruleType="setColor" type="modelTexture" usedModelID="addModelID1" usedModelInMa="girl.ma" textureType="blouse" texturePath="girl_blouse_01.jpg"/>
+    <rule ruleType="setColor" type="modelColor" usedModelID="addModelID4" usedModelInMa="M_Tree05.ma" color="orange" hue="31.95" saturation="0.899" value="0.737"/>
+  </maName>
+</result>
+
+
+
+
+ 
+

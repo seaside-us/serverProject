@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<result>
+  <maName name="flowerSmile.ma" topic="GladTopic" music="0031.mp3">
+    <rule ruleType="Deform" startFrame="0" endFrame="100" usedModelID="flowerSmileMaModel1" usedModelInMa="M_flowerSmile_flower.ma" type="bend" frequency="fast" curvature="middle" bend_methods="topandfoot"/>
+    <rule ruleType="Deform" startFrame="0" endFrame="100" usedModelID="flowerSmileMaModel1" usedModelInMa="M_flowerSmile_flower.ma" type="sine" frequency="fast" curvature="middle" wavelength="middle"/>
+    <rule ruleType="Deform" startFrame="0" endFrame="100" usedModelID="flowerSmileMaModel1" usedModelInMa="M_flowerSmile_flower.ma" type="flare" frequency="fast" curvature="middle" flare_methods="narrow"/>
+    <rule ruleType="Deform" startFrame="0" endFrame="100" usedModelID="flowerSmileMaModel1" usedModelInMa="M_flowerSmile_flower.ma" type="wave" frequency="fast" curvature="middle" wavelength="middle"/>
+    <rule ruleType="setColor" type="modelColor" usedModelID="flowerSmileMaModel1" usedModelInMa="M_flowerSmile_flower.ma" color="cyan" hue="179.18" saturation="0.365" value="0.784"/>
+  </maName>
+</result>
+
+
+
+
+ 
+
