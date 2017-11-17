@@ -221,7 +221,7 @@ public class CameraToXML {
 		ruleName.addAttribute("ruleType", "SetCamera");
 		ruleName.addAttribute("CameraName", shot.getShotName());
 		ruleName.addAttribute("Range", "all");
-		if (shot.getOrder() != -1 && shot.getOrder() % 2 == 1)// 只有在第一个镜头的开始时是1，其他均为0：即所有的镜头均是连续的
+		if (shot.getOrder() != -1 && shot.getOrder() == 1)// 只有在第一个镜头的开始时是1，其他均为0：即所有的镜头均是连续的
 			ruleName.addAttribute("isStart", "1");
 		else
 			ruleName.addAttribute("isStart", "0");
