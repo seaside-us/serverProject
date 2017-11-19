@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="GB2312"?>
 
 <result>
-  <SceneOptionCondition SceneNum="16" AllOption="shark.ma;shock_storm.ma;snake.ma;schoolroomIn.ma;room2.ma;classOver.ma;schoolroomOut.ma;Mount25.ma;Hills14.ma;terrainDesert04.ma;Desert107.ma;terrainTropical46.ma;Tropical45.ma;Bridge04.ma;childrenRoom.ma;room1.ma;" allFullScore="2.136363636363636" SelectedScore="0.27120342897909894"/>
+  <SceneOptionCondition SceneNum="16" AllOption="shark.ma;snake.ma;shock_storm.ma;schoolroomIn.ma;room2.ma;classOver.ma;schoolroomOut.ma;Desert107.ma;Mount25.ma;Hills14.ma;terrainDesert04.ma;terrainTropical46.ma;Tropical45.ma;Bridge04.ma;childrenRoom.ma;room1.ma;" allFullScore="2.136363636363636" SelectedScore="0.2540120896108631"/>
   <Weight DTree="30" MGTopic="15" IETopic="15" RuleTopic="15" TemplateRelated="10" PlacableModel="10" PlacableColorModel="10" Weather="5" Time="5" Action="5" QTopic="10"/>
   <ScoreOptionCondition MGTopic="1" IETopic="1" RuleTopic="1" TemplateRelated="1" PlacableModel="1" PlacableColorModel="0" Weather="0" QTopic="1" Time="0" Action="1">
     <shark.ma>
@@ -21,23 +21,6 @@
       <Probably Probably="0.4090909090909091"/>
       <ScoreSegment ScoreSegment="[0.0,0.4090909090909091)"/>
     </shark.ma>
-    <shock_storm.ma>
-      <decisionvalue decisionvalue="0.0"/>
-      <MGTopic MGTopic="0.0"/>
-      <IETopic IETopic="1.0"/>
-      <RuleTopic RuleTopic="1.0"/>
-      <TemplateRelated TemplateRelated="0.0"/>
-      <PlacableModel PlacableModel="0.0/2.0"/>
-      <PlacableColorModel PlacableColorModel="0.0/0.0"/>
-      <Weather Weather="0.0/0.0"/>
-      <Time Time="0.0/0.0"/>
-      <QProb Probably="0.0"/>
-      <Action Action="1.0/1.0"/>
-      <IndualScore IndualScore="40.0"/>
-      <FullScore FullScore="110.0"/>
-      <Probably Probably="0.36363636363636365"/>
-      <ScoreSegment ScoreSegment="[0.4090909090909091,0.7727272727272727)"/>
-    </shock_storm.ma>
     <snake.ma>
       <decisionvalue decisionvalue="0.0"/>
       <MGTopic MGTopic="0.0"/>
@@ -53,8 +36,25 @@
       <IndualScore IndualScore="40.0"/>
       <FullScore FullScore="110.0"/>
       <Probably Probably="0.36363636363636365"/>
-      <ScoreSegment ScoreSegment="[0.7727272727272727,1.1363636363636362)"/>
+      <ScoreSegment ScoreSegment="[0.4090909090909091,0.7727272727272727)"/>
     </snake.ma>
+    <shock_storm.ma>
+      <decisionvalue decisionvalue="0.0"/>
+      <MGTopic MGTopic="0.0"/>
+      <IETopic IETopic="1.0"/>
+      <RuleTopic RuleTopic="1.0"/>
+      <TemplateRelated TemplateRelated="0.0"/>
+      <PlacableModel PlacableModel="0.0/2.0"/>
+      <PlacableColorModel PlacableColorModel="0.0/0.0"/>
+      <Weather Weather="0.0/0.0"/>
+      <Time Time="0.0/0.0"/>
+      <QProb Probably="0.0"/>
+      <Action Action="1.0/1.0"/>
+      <IndualScore IndualScore="40.0"/>
+      <FullScore FullScore="110.0"/>
+      <Probably Probably="0.36363636363636365"/>
+      <ScoreSegment ScoreSegment="[0.7727272727272727,1.1363636363636362)"/>
+    </shock_storm.ma>
     <schoolroomIn.ma>
       <decisionvalue decisionvalue="0.0"/>
       <MGTopic MGTopic="0.0"/>
@@ -123,7 +123,7 @@
       <Probably Probably="0.045454545454545456"/>
       <ScoreSegment ScoreSegment="[1.6818181818181817,1.727272727272727)"/>
     </schoolroomOut.ma>
-    <Mount25.ma>
+    <Desert107.ma>
       <decisionvalue decisionvalue="0.0"/>
       <MGTopic MGTopic="0.0"/>
       <IETopic IETopic="0.0"/>
@@ -139,6 +139,23 @@
       <FullScore FullScore="110.0"/>
       <Probably Probably="0.045454545454545456"/>
       <ScoreSegment ScoreSegment="[1.727272727272727,1.7727272727272725)"/>
+    </Desert107.ma>
+    <Mount25.ma>
+      <decisionvalue decisionvalue="0.0"/>
+      <MGTopic MGTopic="0.0"/>
+      <IETopic IETopic="0.0"/>
+      <RuleTopic RuleTopic="0.0"/>
+      <TemplateRelated TemplateRelated="0.0"/>
+      <PlacableModel PlacableModel="0.0/2.0"/>
+      <PlacableColorModel PlacableColorModel="0.0/0.0"/>
+      <Weather Weather="0.0/0.0"/>
+      <Time Time="0.0/0.0"/>
+      <QProb Probably="0.0"/>
+      <Action Action="1.0/1.0"/>
+      <IndualScore IndualScore="5.0"/>
+      <FullScore FullScore="110.0"/>
+      <Probably Probably="0.045454545454545456"/>
+      <ScoreSegment ScoreSegment="[1.7727272727272725,1.818181818181818)"/>
     </Mount25.ma>
     <Hills14.ma>
       <decisionvalue decisionvalue="0.0"/>
@@ -155,7 +172,7 @@
       <IndualScore IndualScore="5.0"/>
       <FullScore FullScore="110.0"/>
       <Probably Probably="0.045454545454545456"/>
-      <ScoreSegment ScoreSegment="[1.7727272727272725,1.818181818181818)"/>
+      <ScoreSegment ScoreSegment="[1.818181818181818,1.8636363636363633)"/>
     </Hills14.ma>
     <terrainDesert04.ma>
       <decisionvalue decisionvalue="0.0"/>
@@ -172,25 +189,8 @@
       <IndualScore IndualScore="5.0"/>
       <FullScore FullScore="110.0"/>
       <Probably Probably="0.045454545454545456"/>
-      <ScoreSegment ScoreSegment="[1.818181818181818,1.8636363636363633)"/>
-    </terrainDesert04.ma>
-    <Desert107.ma>
-      <decisionvalue decisionvalue="0.0"/>
-      <MGTopic MGTopic="0.0"/>
-      <IETopic IETopic="0.0"/>
-      <RuleTopic RuleTopic="0.0"/>
-      <TemplateRelated TemplateRelated="0.0"/>
-      <PlacableModel PlacableModel="0.0/2.0"/>
-      <PlacableColorModel PlacableColorModel="0.0/0.0"/>
-      <Weather Weather="0.0/0.0"/>
-      <Time Time="0.0/0.0"/>
-      <QProb Probably="0.0"/>
-      <Action Action="1.0/1.0"/>
-      <IndualScore IndualScore="5.0"/>
-      <FullScore FullScore="110.0"/>
-      <Probably Probably="0.045454545454545456"/>
       <ScoreSegment ScoreSegment="[1.8636363636363633,1.9090909090909087)"/>
-    </Desert107.ma>
+    </terrainDesert04.ma>
     <terrainTropical46.ma>
       <decisionvalue decisionvalue="0.0"/>
       <MGTopic MGTopic="0.0"/>
