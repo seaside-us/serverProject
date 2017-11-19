@@ -1973,8 +1973,10 @@ public class CameraToXML {
 
 					rule.setShotPlan(shotInOWL);// 得到镜头实例所属shot类的名称
 					ArrayList<String> target = getNamesByID(TargetIDList, doc);
+					String topicInDoc=getTopicFromDoc(doc);
 					rule.setTarget(target);// 每个镜头实例的target
 					rule.setUsedModelID(TargetIDList);
+					rule.setTopic(topicInDoc);//短信的主题，可以为空串
 					String plan = shotInOWL;
 
 					char postfix = (char) ('A' + countShot);
@@ -2229,6 +2231,17 @@ public class CameraToXML {
 		}
 		return ret;
 	}
+	
+	
+	public String getTopicFromDoc(Document doc){
+		String ret="";
+		Element rootName = (Element) doc.getRootElement();
+		Element name = rootName.element("maName");
+		if(name!=null&&name.attributeValue("topic")!=null){
+			ret=name.attributeValue("topic");
+		}
+		return ret;
+	}
 
 	public static void main(String[] str) {
 		CameraToXML camera = new CameraToXML();
@@ -2261,6 +2274,8 @@ public class CameraToXML {
 		private int endinallinall;
 		private String hlcp;
 		private int order = -1;
+		private String topic;
+
 
 		public String getShotName() {
 			return shotName;
@@ -2427,9 +2442,18 @@ public class CameraToXML {
 			}
 			return rule;
 		}
+		
+		public String getTopic() {
+			return topic;
+		}
+
+		public void setTopic(String topic) {
+			this.topic = topic;
+		}
+
 
 		public String toString() {
-			String ret = "\"CameraName\":" + this.getShotName() + ";\"HLCPPlan\":" + this.getHlcp() + ";\"ShotPlan\":"
+			String ret = "\"Topic\":" + this.getTopic()+ "\"CameraName\":" + this.getShotName() + ";\"HLCPPlan\":" + this.getHlcp() + ";\"ShotPlan\":"
 					+ this.getShotPlan() + ";\"target\":" + this.getTarget().toString() + ";\"usedModelID\":"
 					+ this.getUsedModelID().toString() + ";\"StartPitch\":" + this.getStartPitch() + ";\"EndPitch\":"
 					+ this.getEndPitch() + ";\"StartYaw\":" + this.getStartYaw() + ";\"EndYaw\":" + this.getEndYaw()
