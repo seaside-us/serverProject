@@ -1,16 +1,30 @@
 <?xml version="1.0" encoding="GB2312"?>
 
 <result>
-  <maName name="schoolroomIn.ma" topic="DreadTopic" music="fr02.mp3">
-    <rule ruleType="addToMa" addModel="M_pen.ma" class="OfficeStationery" spaceName="SP_schoolroomInC" type="model" isTarget="1" degree="" number="4" addModelID="addModelID1"/>
-    <rule ruleType="addToMa" addModel="M_magnifier.ma" class="OfficeStationery" spaceName="SP_schoolroomInC" type="model" isTarget="1" degree="" number="1" addModelID="addModelID2"/>
-    <rule ruleType="addToMa" addModel="M_pen.ma" class="OfficeStationery" spaceName="SP_schoolroomInB" type="model" isTarget="1" degree="" number="4" addModelID="addModelID3"/>
-    <rule ruleType="addToMa" addModel="M_magnifier.ma" class="OfficeStationery" spaceName="SP_schoolroomInB" type="model" isTarget="1" degree="" number="1" addModelID="addModelID4"/>
-    <rule ruleType="addLightToMa" autoGeneration="yes" type="volumeLight" haveShade="yes" targetMode="M_pen.ma" haveEffect="no" relativeLocation="roomIn" lightColor="white" intensity="normal" isDynamic="no" changeFrame="" changeColor="" changeIntensity="" moveDirection=""/>
-    <rule ruleType="addLightToMa" autoGeneration="yes" type="ambientLight" haveShade="no" targetMode="M_pen.ma" haveEffect="no" relativeLocation="roomOut" lightColor="white" intensity="normal" isDynamic="no" changeFrame="" changeColor="" changeIntensity="" moveDirection=""/>
-    <rule ruleType="addLightToMa" autoGeneration="yes" type="pointLight" haveShade="yes" targetMode="M_pen.ma" haveEffect="yes" relativeLocation="roomOut" lightColor="white" intensity="normal" isDynamic="no" changeFrame="" changeColor="" changeIntensity="" moveDirection=""/>
-    <rule ruleType="setLayout" spaceName="SP_schoolroomInC" layoutEffect="ComparedLayout" area1_name="addModelID1 addModelID2" area1_shape="othertype"/>
-    <rule ruleType="setLayout" spaceName="SP_schoolroomInB" layoutEffect="ComparedLayout" area1_name="addModelID3 addModelID4" area1_shape="othertype"/>
-    <rule ruleType="SetCamera" CameraName="newCameraA" Range="all" isStart="1" depthOfField="focus" HLCP="Back" shotPlan="Fix" usedModelID="addModelID1 addModelID2 addModelID3 addModelID4" target="M_pen.ma M_magnifier.ma M_pen.ma M_magnifier.ma" startPitch="forehead" endPitch="forehead" startYaw="" endYaw="" startShotType="establish" endShotType="establish" startframe="1" endframe="350" startinall="1" endinall="350"/>
+  <maName name="room2.ma" topic="DreadTopic" music="0037.mp3" maFrame="225">
+    <rule ruleType="addToMa" addModel="M_pen.ma" class="OfficeStationery" spaceName="SP_room2_D" type="model" isTarget="1" degree="" number="4" addModelID="addModelID1"/>
+    <rule ruleType="addToMa" addModel="M_book.ma" class="OfficeStationery" spaceName="SP_room2_D" type="model" isTarget="1" degree="" number="1" addModelID="addModelID2"/>
+    <rule ruleType="addToMa" addModel="M_qipaishi_chairII.ma" class="Chess" spaceName="SP_room2_C" type="model" isTarget="0" degree="" number="1" addModelID="addModelID3"/>
+    <rule ruleType="addToMa" addModel="M_pingpong_pingpong.ma" class="PingPong" spaceName="SP_room2_C" type="model" isTarget="0" degree="" number="4" addModelID="addModelID4"/>
+    <rule ruleType="addToMa" addModel="M_gutterball_Bowling.ma" class="Bowling" spaceName="SP_room2_C" type="model" isTarget="0" degree="" number="1" addModelID="addModelID5"/>
+    <rule ruleType="addToMa" addModel="M_chess.ma" class="Chess" spaceName="SP_room2_C" type="model" isTarget="0" degree="" number="1" addModelID="addModelID6"/>
+    <rule ruleType="addToMa" addModel="M_treadmill.ma" class="SportDevice" spaceName="SP_room2_B" type="model" isTarget="0" degree="" number="2" addModelID="addModelID7"/>
+    <rule ruleType="addToMa" addModel="M_qipaishi_xqqipan.ma" class="Chess" spaceName="SP_room2_B" type="model" isTarget="0" degree="" number="1" addModelID="addModelID8"/>
+    <rule ruleType="addToMa" addModel="M_tincup.ma" class="Cup" spaceName="SP_room2_D" type="model" isTarget="0" degree="" number="4" addModelID="addModelID9"/>
+    <rule ruleType="addToMa" addModel="M_kettle.ma" class="Pot" spaceName="SP_room2_D" type="model" isTarget="0" degree="" number="1" addModelID="addModelID10"/>
+    <rule ruleType="addToMa" addModel="M_openbook.ma" class="OfficeStationery" spaceName="SP_room2_D" type="model" isTarget="0" degree="" number="3" addModelID="addModelID11"/>
+    <rule ruleType="addToMa" addModel="M_grape.ma" class="Grape" spaceName="SP_room2_D" type="model" isTarget="0" degree="" number="4" addModelID="addModelID12"/>
+    <rule ruleType="addToMa" addModel="M_teacup.ma" class="Cup" spaceName="SP_room2_D" type="model" isTarget="0" degree="" number="1" addModelID="addModelID13"/>
+    <rule ruleType="addToMa" addModel="M_boy.ma" class="YoungMan" spaceName="SP_room2_C" type="people" isTarget="1" degree="" number="1" addModelID="addModelID14"/>
+    <rule ruleType="addActionToMa" type="action" eventType="ShootEvent" usedModelID="addModelID14" usedModelInMa="M_boy.ma" actionName="shootingarrow79_86" distance="Default" reference="" ifAddConstraint="true"/>
+    <rule ruleType="addActionToMa" type="action" eventType="Static_ScaredEvent" usedModelID="addModelID14" usedModelInMa="M_boy.ma" actionName="scared79_73" distance="Default" reference="" ifAddConstraint="false"/>
+    <rule ruleType="Deform" startFrame="0" endFrame="200" usedModelID="addModelID1" usedModelInMa="M_pen.ma" type="squash" frequency="fast" curvature="big"/>
+    <rule ruleType="Deform" startFrame="0" endFrame="200" usedModelID="addModelID1" usedModelInMa="M_pen.ma" type="sine" frequency="normal" curvature="middle" wavelength="middle"/>
+    <rule ruleType="addLightToMa" autoGeneration="no" type="ambientLight" haveShade="no" targetMode="M_pen.ma" haveEffect="no" relativeLocation="roomIn" lightColor="white" intensity="normal" isDynamic="no" changeFrame="" changeColor="" changeIntensity="" moveDirection=""/>
+    <rule ruleType="addLightToMa" autoGeneration="no" type="volumeLight" haveShade="yes" targetMode="M_pen.ma" haveEffect="no" relativeLocation="roomIn" lightColor="white" intensity="normal" isDynamic="no" changeFrame="" changeColor="" changeIntensity="" moveDirection=""/>
+    <rule ruleType="setLayout" spaceName="SP_room2_D" layoutEffect="ComparedLayout" area1_name="addModelID1 addModelID2 addModelID9 addModelID10 addModelID11 addModelID13" area1_shape="othertype" area2_name="addModelID12" area2_shape="othertype"/>
+    <rule ruleType="setLayout" spaceName="SP_room2_C" layoutEffect="ComparedLayout" area1_name="addModelID3 addModelID4 addModelID5 addModelID6" area1_shape="othertype" area2_name="addModelID14" area2_shape="point"/>
+    <rule ruleType="setLayout" spaceName="SP_room2_B" layoutEffect="RhythmLayout" area1_name="addModelID7 addModelID8" area1_shape="triangle"/>
+    <rule ruleType="SetCamera" CameraName="newCameraA" Range="all" isStart="1" depthOfField="focus" HLCP="Back_2" shotPlan="Fix" usedModelID="addModelID1 addModelID2" target="M_pen.ma M_book.ma" startPitch="forehead" endPitch="forehead" startYaw="backside" endYaw="backside" startShotType="establish" endShotType="establish" startframe="1" endframe="225" startinall="1" endinall="225"/>
   </maName>
 </result>

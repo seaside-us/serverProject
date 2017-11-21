@@ -1787,7 +1787,7 @@ public class CameraToXML {
 			logger.info("读取知识库中CameraSWRL_HLCP_开头规则：start");
 			ArrayList<String> CameraRules = CameraSWRL.getSWRLRules(owlModel, CameraSWRL_HLCP_);
 			logger.info("读取知识库中CameraSWRL_HLCP_开头规则：end");
-			ArrayList<String> rulesName = new ArrayList<String>();// 获得得分的hlcp规则集合
+			ArrayList<String> rulesName = new ArrayList<String>();// 获得得分的hlcp规则集合，即匹配当前条件的规则
 
 			/**
 			 * 第一层 执行所有CameraSWRL_HLCP_规则----开始
@@ -1821,7 +1821,7 @@ public class CameraToXML {
 			 */
 
 			/**
-			 * 找到usedhlcp得分!=0 的规则集合rulesName里的任意一条，执行，并找到再次执行单条规则后的HLCP----开始
+			 * 找到usedhlcp得分!=0 的规则集合rulesName里的任意一条，执行，并找到再次执行单条规则后的HLCP实例----开始
 			 */
 			String hlcpRuleSelected = "";// 最终随机选定的hlcp规则
 			OWLIndividual hlcpindiSelected = null;// hlcpRuleSelected推理出的hlcp实例
@@ -1847,7 +1847,7 @@ public class CameraToXML {
 				}
 			}
 			/**
-			 * 找到usedhlcp得分!=0 的规则集合rulesName里的任意一条，执行，并找到再次执行单条规则后的HLCP----结束
+			 * 找到usedhlcp得分!=0 的规则集合rulesName里的任意一条，执行，并找到再次执行单条规则后的HLCP实例----结束
 			 * 第一层结束
 			 */
 
@@ -1867,7 +1867,9 @@ public class CameraToXML {
 			}
 
 			String hlcpMethod = hlcpRuleSelected.substring(16);// CameraSWRL_HLCP_In_Contra---In_Contra
-			logger.info("读取选定的CameraSWRL_HLCP_规则对应的多条CameraSWRL_Shot_规则：start");
+																// //
+																// CameraSWRL_HLCP_In_Contra_1---In_Contra_1
+			logger.info("读取选定的CameraSWRL_HLCP_规则对应的多条CameraSWRL_Shot_规则：start"); // CameraSWRL_Shot_In_Contra_3
 			ArrayList<String> shotRules = CameraSWRL.getSWRLRules(owlModel, CameraSWRL_Shot_ + hlcpMethod);
 			logger.info("读取选定的CameraSWRL_HLCP_规则对应的多条CameraSWRL_Shot_规则：end");
 
@@ -1888,9 +1890,6 @@ public class CameraToXML {
 				logger.info("hlcp手法：" + hlcpMethod + "；具体hlcp实例：" + hlcpindiSelected.getBrowserText() + ";shotRule实例："
 						+ shotRuleSelected);
 				Collection<?> HLCPshots = (Collection<?>) hlcpindiSelected.getPropertyValues(HLCPShots);
-				// Collection<?> HLCPtargets = (Collection<?>)
-				// hlcpSelected.getPropertyValues(HLCPTargets);//
-				// HLCPtargets已经通过规则传给了shot，无须在程序中重复
 				OWLObjectProperty HLCPDirection = owlModel.getOWLObjectProperty(PREFIX_OWL + "HLCPDirection");// 拍摄手法的全局镜头方向，每个镜头围绕这个方向
 				OWLObjectProperty ShotPitch = owlModel.getOWLObjectProperty(PREFIX_OWL + "ShotPitch");
 				OWLObjectProperty ShotRotate = owlModel.getOWLObjectProperty(PREFIX_OWL + "ShotRotate");
@@ -1973,10 +1972,10 @@ public class CameraToXML {
 
 					rule.setShotPlan(shotInOWL);// 得到镜头实例所属shot类的名称
 					ArrayList<String> target = getNamesByID(TargetIDList, doc);
-					String topicInDoc=getTopicFromDoc(doc);
+					String topicInDoc = getTopicFromDoc(doc);
 					rule.setTarget(target);// 每个镜头实例的target
 					rule.setUsedModelID(TargetIDList);
-					rule.setTopic(topicInDoc);//短信的主题，可以为空串
+					rule.setTopic(topicInDoc);// 短信的主题，可以为空串
 					String plan = shotInOWL;
 
 					char postfix = (char) ('A' + countShot);
@@ -1995,6 +1994,7 @@ public class CameraToXML {
 					// 镜头时间设置暂时没有按规则的比例分配，目前是平均分配，已修改按比例分配
 					rule.setStartframe(start);
 					rule.setEndframe(end);
+					// CameraSWRL_HLCP_In_Contra_1---In_Contra_1
 					rule.setHlcp(hlcpMethod);
 					rule.setOrder(ADLRules.size() + 1);
 					ADLRules.add(rule);
@@ -2231,14 +2231,13 @@ public class CameraToXML {
 		}
 		return ret;
 	}
-	
-	
-	public String getTopicFromDoc(Document doc){
-		String ret="";
+
+	public String getTopicFromDoc(Document doc) {
+		String ret = "";
 		Element rootName = (Element) doc.getRootElement();
 		Element name = rootName.element("maName");
-		if(name!=null&&name.attributeValue("topic")!=null){
-			ret=name.attributeValue("topic");
+		if (name != null && name.attributeValue("topic") != null) {
+			ret = name.attributeValue("topic");
 		}
 		return ret;
 	}
@@ -2275,7 +2274,6 @@ public class CameraToXML {
 		private String hlcp;
 		private int order = -1;
 		private String topic;
-
 
 		public String getShotName() {
 			return shotName;
@@ -2442,7 +2440,7 @@ public class CameraToXML {
 			}
 			return rule;
 		}
-		
+
 		public String getTopic() {
 			return topic;
 		}
@@ -2451,15 +2449,14 @@ public class CameraToXML {
 			this.topic = topic;
 		}
 
-
 		public String toString() {
-			String ret = "\"Topic\":" + this.getTopic()+ "\"CameraName\":" + this.getShotName() + ";\"HLCPPlan\":" + this.getHlcp() + ";\"ShotPlan\":"
-					+ this.getShotPlan() + ";\"target\":" + this.getTarget().toString() + ";\"usedModelID\":"
-					+ this.getUsedModelID().toString() + ";\"StartPitch\":" + this.getStartPitch() + ";\"EndPitch\":"
-					+ this.getEndPitch() + ";\"StartYaw\":" + this.getStartYaw() + ";\"EndYaw\":" + this.getEndYaw()
-					+ ";\"StartShotType\":" + this.getStartShotType() + ";\"EndShotType:" + this.getEndShotType()
-					+ ";\"Startframe\":" + this.getStartframe() + ";\"Endframe\":" + this.getEndframe() + ";\"Order\":"
-					+ this.getOrder();
+			String ret = "\"Topic\":" + this.getTopic() + ";\"CameraName\":" + this.getShotName() + ";\"HLCPPlan\":"
+					+ this.getHlcp() + ";\"ShotPlan\":" + this.getShotPlan() + ";\"target\":"
+					+ this.getTarget().toString() + ";\"usedModelID\":" + this.getUsedModelID().toString()
+					+ ";\"StartPitch\":" + this.getStartPitch() + ";\"EndPitch\":" + this.getEndPitch()
+					+ ";\"StartYaw\":" + this.getStartYaw() + ";\"EndYaw\":" + this.getEndYaw() + ";\"StartShotType\":"
+					+ this.getStartShotType() + ";\"EndShotType:" + this.getEndShotType() + ";\"Startframe\":"
+					+ this.getStartframe() + ";\"Endframe\":" + this.getEndframe() + ";\"Order\":" + this.getOrder();
 			return ret;
 		}
 

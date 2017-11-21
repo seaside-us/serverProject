@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="GB2312"?>
 
 <result>
-  <SceneOptionCondition SceneNum="16" AllOption="shark.ma;snake.ma;shock_storm.ma;schoolroomIn.ma;room2.ma;classOver.ma;schoolroomOut.ma;Desert107.ma;Mount25.ma;Hills14.ma;terrainDesert04.ma;terrainTropical46.ma;Tropical45.ma;Bridge04.ma;childrenRoom.ma;room1.ma;" allFullScore="2.136363636363636" SelectedScore="0.2540120896108631"/>
+  <SceneOptionCondition SceneNum="16" AllOption="shark.ma;snake.ma;shock_storm.ma;schoolroomIn.ma;room2.ma;classOver.ma;schoolroomOut.ma;Desert107.ma;Mount25.ma;Hills14.ma;terrainDesert04.ma;terrainTropical46.ma;Tropical45.ma;Bridge04.ma;childrenRoom.ma;room1.ma;" allFullScore="2.136363636363636" SelectedScore="0.04177960186300404"/>
   <Weight DTree="30" MGTopic="15" IETopic="15" RuleTopic="15" TemplateRelated="10" PlacableModel="10" PlacableColorModel="10" Weather="5" Time="5" Action="5" QTopic="10"/>
   <ScoreOptionCondition MGTopic="1" IETopic="1" RuleTopic="1" TemplateRelated="1" PlacableModel="1" PlacableColorModel="0" Weather="0" QTopic="1" Time="0" Action="1">
     <shark.ma>
