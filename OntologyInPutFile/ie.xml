@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<result negType="没有" negCont=" "><message value="恐惧，短信测试完成后知识库没有从备份恢复"/><nemessage value=" 恐惧，短信测试完成后知识库没有从备份恢复"/><segmessage value="恐惧#aj ，#wp 短#aj 信#nn 测试#vb 完成#vb 后#nd 知识库#nn 没有#ad 从#pp 备份#nn 恢复#vb"/><topic name="恐惧" key="恐惧"><root name="动作" flag="" value="验证动作:测试" color="" negFlag="0" negCont="" neg=""/><root name="情绪" flag="" value="恐惧:恐惧" color="" negFlag="0" negCont="" neg=""/></topic><topic name="考试" flag="1" probability="0.428571"/><textType attribute="subjective"><fear attribute="1.0"/></textType></result>
-
-
-
-
- 
-

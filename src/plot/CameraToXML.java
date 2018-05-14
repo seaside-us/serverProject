@@ -29,7 +29,7 @@ import edu.stanford.smi.protegex.owl.model.OWLObjectProperty;
 import edu.stanford.smi.protegex.owl.swrl.exceptions.SWRLFactoryException;
 import edu.stanford.smi.protegex.owl.swrl.exceptions.SWRLRuleEngineException;
 
-enum State {
+enum State{
 	/** 场景中没有添加模型 默认摄像机 **/
 	NOTHING,
 	/** 定性中的场景为 摄像机不可以调整的背景场景 **/
@@ -51,6 +51,7 @@ public class CameraToXML {
 	private final String CameraSWRL_Shot_ = "CameraSWRL_Shot_";// specific shot
 	/** 摄像机定性规划的执行结果反馈枚举字符串 **/
 	private static String CameraADLExeState = "";
+	private static boolean CameraForExpression = false;//全局变量保证摄像机规划最多分配给表情表现一个镜头
 
 	private final double SHORT = 1 / 4.0;
 	private final double MEDIUM = 2 / 4.0;
@@ -101,25 +102,30 @@ public class CameraToXML {
 		}
 
 		bgtype = (Integer) ma.getPropertyValue(mabgtype);// 3
-		if (bgtype != 3 && bgtype != 0 && bgtype != 1) // 0室内，3户外场景，1背景场景（外加emptyPlot.ma，该场景中bgtype=1）
-			return doc;
+		// if (bgtype != 3 && bgtype != 0 && bgtype != 1) //
+		// 0室内;1背景场景（外加emptyPlot.ma，该场景中bgtype=1）;2 mm三个场景;3户外场景；
+		// return doc;
 		// 背景场景处理，定性设置，定量并未读取
-		if (bgtype == 1) {
-			logger.info("===bgscene摄像机程序开始===");
-			int rantemp = random.nextInt(10);
-			if (rantemp > 6) {
-				printRule(doc, "newCameraA", 1, 1, this.maFrame, 1, this.maFrame);
-			} else {
-				int tmp1 = this.maFrame / 2;
-				int rantemp2 = tmp1 + (int) (Math.random() * (this.maFrame / 3));
-				printRule(doc, "newCameraA", 1, 1, rantemp2, 1, rantemp2);
-				printRule(doc, "newCameraA", 0, rantemp2 + 1, this.maFrame, rantemp2 + 1, this.maFrame);
+		if (bgtype == 1 || bgtype == 2) {// 20180315 加入happy_mm类似场景
+			logger.info("===bgscene camera plan start===");
+			if (isReadyBgSceneCamera(maName)) {
+				logger.info("===execute bgscene camera plan===");
+				printRule(doc, "bgSceneCamera", 1, 1, this.maFrame, 1, this.maFrame);
 			}
-			logger.info("===bgscene摄像机程序结束===");
+			// int rantemp = random.nextInt(10);
+			// if (rantemp > 6) {
+			// printRule(doc, "newCameraA", 1, 1, this.maFrame, 1,
+			// this.maFrame);
+			// } else {
+			// int tmp1 = this.maFrame / 2;
+			// int rantemp2 = tmp1 + (int) (Math.random() * (this.maFrame / 3));
+			// printRule(doc, "newCameraA", 1, 1, rantemp2, 1, rantemp2);
+			// printRule(doc, "newCameraA", 0, rantemp2 + 1, this.maFrame,
+			// rantemp2 + 1, this.maFrame);
+			// }
+			logger.info("===bgscene camera plan end===");
 			return doc;
-
 		}
-
 		Element root = doc.getRootElement();
 		Element name = root.element("maName");
 
@@ -193,8 +199,19 @@ public class CameraToXML {
 			targetname = targetname + targets.get(i) + " ";
 		}
 
-		ruleName.addAttribute("usedModelID", targetid);
+		// ///////////////////////////人物表情判断////////////////////////////
+		
+		int indexExpressionModel = hasExpressAndOneModel(targets, doc);
+		if (-1 != indexExpressionModel) {// 若存在含有表情的人物，随机表现
+			logger.info("存在含有表情的人物，选择一个人物表现");
+			targetid = targetIDs.get(indexExpressionModel);
+			targetname = targets.get(indexExpressionModel);
+		}				
+		// ///////////////////////////人物表情判断结束//////////////////////////
+		
+		ruleName.addAttribute("usedModelID", targetid);//这 两个属性必须有，targetid通过判断有无人物表情改变
 		ruleName.addAttribute("target", targetname);
+	
 		if (startPitch != null || startPitch != "")
 			ruleName.addAttribute("startPitch", startPitch);
 		ruleName.addAttribute("endPitch", endPitch);
@@ -215,25 +232,49 @@ public class CameraToXML {
 	}
 
 	public Document printRule(Document doc, ADLRule shot) {
+		System.out.println("____________________________________________________________________________");
 		Element rootName = (Element) doc.getRootElement();
 		Element name = rootName.element("maName");
 		Element ruleName = name.addElement("rule");
 		ruleName.addAttribute("ruleType", "SetCamera");
 		ruleName.addAttribute("CameraName", shot.getShotName());
 		ruleName.addAttribute("Range", "all");
-		if (shot.getOrder() != -1 && shot.getOrder() == 1)// 只有在第一个镜头的开始时是1，其他均为0：即所有的镜头均是连续的
+		if (shot.getOrder() != -1 && shot.getOrder() == 1)// 20180104,只有在第一个镜头的开始时是1，其他均为0：即所有的镜头均是连续的
 			ruleName.addAttribute("isStart", "1");
 		else
 			ruleName.addAttribute("isStart", "0");
 		ruleName.addAttribute("depthOfField", "focus");
 		ruleName.addAttribute("HLCP", shot.getHlcp());// 忘记记录
+		ArrayList<String> models = shot.getTarget();
+		// ///////////在此判断定镜头的拍摄目标是否有 有位移的动作////////////////
+		// 确认是定镜头
+		if (shot.getShotPlan().equalsIgnoreCase("Fix")) {
+			// 确认有位移动作
+			if (moveActionInModel(models, doc)) {
+				shot.setShotPlan("Follow");
+			}
+		}
+		// ///////////////////////////位移动作判断结束////////////////////////////
+
 		ruleName.addAttribute("shotPlan", shot.getShotPlan());
 		String targetid = "";
 		String targetname = "";
 
-		ArrayList<String> targetidsInOwl = shot.getUsedModelID();
-		ArrayList<String> targetnameInOwl = shot.getTarget();
+		ArrayList<String> targetidsInOwl = new ArrayList<String>();
+		ArrayList<String> targetnameInOwl = new ArrayList<String>();
 		if (targetidsInOwl != null && targetnameInOwl != null && targetidsInOwl.size() == targetnameInOwl.size()) {
+			// ///////////////////////////人物表情判断////////////////////////////
+			
+			int indexExpressionModelOWL = hasExpressAndOneModel(models, doc);
+			if (-1 != indexExpressionModelOWL) {// 若存在含有表情的人物，随机表现
+				logger.info("存在含有表情的人物，选择一个人物表现");
+				targetidsInOwl.add(shot.getUsedModelID().get(indexExpressionModelOWL));
+				targetnameInOwl.add(shot.getTarget().get(indexExpressionModelOWL));
+			} else {
+				targetidsInOwl = shot.getUsedModelID();
+				targetnameInOwl = shot.getTarget();
+			}
+			// ///////////////////////////人物表情判断结束//////////////////////////
 			for (int i = 0; i < targetidsInOwl.size(); i++) {
 				targetid = targetid + targetidsInOwl.get(i) + " ";
 				targetname = targetname + targetnameInOwl.get(i) + " ";
@@ -242,6 +283,10 @@ public class CameraToXML {
 			logger.debug("printRule() function has different nums in targetid and targetname");
 		}
 
+		//增加摄像机的拍摄目标属性
+		ruleName.addAttribute("usedModelID", targetid.trim());
+		ruleName.addAttribute("target", targetname.trim());
+		
 		String startPitch = shot.getStartPitch();
 		String endPitch = shot.getEndPitch();
 		String startRotate = shot.getStartYaw();
@@ -251,8 +296,6 @@ public class CameraToXML {
 		int startframe = shot.getStartframe();
 		int endframe = shot.getEndframe();
 
-		ruleName.addAttribute("usedModelID", targetid.trim());
-		ruleName.addAttribute("target", targetname.trim());
 		if (startPitch != null || startPitch != "")
 			ruleName.addAttribute("startPitch", startPitch);
 		ruleName.addAttribute("endPitch", endPitch);
@@ -268,6 +311,7 @@ public class CameraToXML {
 		ruleName.addAttribute("endinall", String.valueOf(endframe));
 		// HLCPPlan
 		// ruleName.addAttribute("HLCPPlan", Integer.toString(endframe));
+		logger.info(shot.toString());
 		return doc;
 
 	}
@@ -277,7 +321,7 @@ public class CameraToXML {
 		Element rootName = (Element) doc.getRootElement();
 		Element name = rootName.element("maName");
 		Element ruleName = name.addElement("rule");
-		ruleName.addAttribute("ruleType", "SetDefaultCamera");
+		ruleName.addAttribute("ruleType", "SetCamera");
 		ruleName.addAttribute("CameraName", cameraName);
 		ruleName.addAttribute("isStart", Integer.toString(isStart));
 		ruleName.addAttribute("startframe", Integer.toString(startframe));
@@ -285,7 +329,6 @@ public class CameraToXML {
 		ruleName.addAttribute("startinall", Integer.toString(startframe));
 		ruleName.addAttribute("endinall", Integer.toString(endframe));
 		return doc;
-
 	}
 
 	public String ShootingScaleword(int type) {
@@ -1229,8 +1272,6 @@ public class CameraToXML {
 
 					int shotSize = shots.size();
 					int spSize = sortedlist.size();
-					logger.info("actual plan,focus on camera targets:");
-
 					for (int i = 0; i < shotSize; i++) {
 						ADLRule shot = shots.get(i);
 						String orig = sortedlist.get(i % spSize).trim();// 循环取，可能会存在镜头不连续的情况
@@ -1244,13 +1285,14 @@ public class CameraToXML {
 						shot.setUsedModelID(usedModelID);
 						usedModelName = getNamesByID(usedModelID, doc);
 						shot.setTarget(usedModelName);
-						logger.info(shot.toString());
+						logger.info("actual plan,focus on camera targets:");
 						doc = printRule(doc, shot);
 					}
 				} else
 					// 即知识库推出只有一个镜头，不管有几个可用空间
 					for (int i = 0; i < shots.size(); i++) {// 目前是一个手法里的镜头们按规则分配帧数，打印
 						ADLRule shot = shots.get(i);
+						logger.info("actual plan,focus on camera targets:");
 						doc = printRule(doc, shot);
 					}
 				return doc;
@@ -1710,7 +1752,7 @@ public class CameraToXML {
 	 * @param doc
 	 * @return
 	 */
-	public boolean moveActionInModel(ArrayList<String> modellist, Document doc) {
+	public boolean moveActionInModel(ArrayList<String> modelNamelist, Document doc) {
 		Element rootName = (Element) doc.getRootElement();
 		Element name = rootName.element("maName");
 		for (Iterator<Element> it = name.elementIterator(); it.hasNext();) {
@@ -1719,10 +1761,12 @@ public class CameraToXML {
 			Matcher match;
 			boolean flag = false;
 
+			// 如果该条规则有actionName参数，则获取该参数值，进行正则匹配
 			if (null != rule.attributeValue("actionName")) {
 				match = pattern.matcher(rule.attributeValue("actionName"));
 				flag = match.find();
 			}
+			// 如果由上if判断出，该条规则是walk类有位移的动作，则获取该条规则的 modelName
 			if (null != rule.attributeValue("ruleType") && rule.attributeValue("ruleType").equals("addActionToMa")
 					&& flag) {
 				// 取得动作这条有位移的语句后，判断该model是否在modellist中
@@ -1730,7 +1774,7 @@ public class CameraToXML {
 																				// M_boy.ma
 				if (null != modelnameAction) {
 					String modelname = modelnameAction;
-					if (modellist.contains(modelname))// 摄像机需要拍摄的系列目标中是否包含该有位移的model
+					if (modelNamelist.contains(modelname))// 摄像机需要拍摄的系列目标中是否包含该有位移的model
 						return true;
 					else
 						continue;
@@ -2240,6 +2284,68 @@ public class CameraToXML {
 			ret = name.attributeValue("topic");
 		}
 		return ret;
+	}
+
+	public boolean isReadyBgSceneCamera(String maName) {
+		Set<String> maNames = new HashSet<String>();
+		maNames.add("windbell.ma");
+		maNames.add("seal.ma");
+		maNames.add("hurry.ma");
+		maNames.add("danceGirl.ma");
+		maNames.add("clock.ma");
+		maNames.add("snake.ma");
+		maNames.add("questionMark.ma");
+		maNames.add("flowerSmile.ma");
+		maNames.add("fallingStar.ma");
+		maNames.add("balloon.ma");
+		maNames.add("comeBack.ma");
+		maNames.add("Valentineday.ma");
+		maNames.add("undersea_3.ma");
+		maNames.add("sunrise.ma");
+		maNames.add("festival.ma");
+		maNames.add("map.ma");
+		maNames.add("disagree_boy.ma");
+		maNames.add("giveRose.ma");
+		maNames.add("happy_mm.ma");
+		maNames.add("agree_flower.ma");
+		maNames.add("butterfly.ma");
+		maNames.add("butterflyGrass.ma");
+		maNames.add("waterfall.ma");
+		maNames.add("happy_mm.ma");
+		maNames.add("angry_mm.ma");
+		maNames.add("cry_mm.ma");
+		if (maNames.contains(maName)) {
+			return true;
+		}
+		return false;
+	}
+	/**
+	 *
+	 * 判断该 modelNamelist中是否存在在doc中规划表情，若存在规划表情，将拍摄目标替换为表情人物
+	 * 
+	 * @param modelNamelist
+	 * @param doc
+	 * @return
+	 */
+	public int hasExpressAndOneModel(ArrayList<String> modelNamelist, Document doc) {
+		Element rootName = (Element) doc.getRootElement();
+		Element name = rootName.element("maName");
+		for (Iterator<Element> it = name.elementIterator(); it.hasNext() && !CameraForExpression;) {
+			Element rule = it.next();
+			// 找出ADL中添加的表情，检测表情人物模型是否在modelNamelist中，在则跳出，返回该模型的名字（一个ADL最多分配一个这样的镜头）
+			if (null != rule.attributeValue("ruleType") && rule.attributeValue("ruleType").equals("addExpressionToMa")) {
+				String modelnameExpresison = rule.attributeValue("usedModelInMa");// eg.
+																					// M_boy.ma
+				if (null != modelnameExpresison) {
+					if (modelNamelist.contains(modelnameExpresison)) {// 摄像机需要拍摄的系列目标中是否包含该有表情的model
+						CameraForExpression = true;
+						return modelNamelist.indexOf(modelnameExpresison);
+					} else
+						continue;
+				}
+			}
+		}
+		return -1;
 	}
 
 	public static void main(String[] str) {
